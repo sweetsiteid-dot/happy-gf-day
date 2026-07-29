@@ -9,15 +9,10 @@
           content="width=device-width, initial-scale=1.0">
 
     <title>
-        Unlock My Heart ❤️ | Akbar & Deandra
+        Happy National Girlfriend Day ❤️
     </title>
 
-    <!-- CSS -->
-
-    <link rel="stylesheet" href="style.css">
-
     <!-- Google Font -->
-
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
 
@@ -28,10 +23,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Press+Start+2P&display=swap"
           rel="stylesheet">
 
-    <!-- Icons -->
-
+    <!-- Font Awesome -->
     <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="style.css">
 
 </head>
 
@@ -53,13 +51,13 @@
 
         <h1>
 
-            SYSTEM BOOTING
+            LOVE QUEST
 
         </h1>
 
         <p id="bootText">
 
-            Initializing...
+            Preparing Mission...
 
         </p>
 
@@ -80,7 +78,7 @@
 </div>
 
 <!-- ===================================================
-     PARTICLES
+     BACKGROUND EFFECTS
 =================================================== -->
 
 <div id="particles"></div>
@@ -91,66 +89,74 @@
 
 <div id="cursorGlow"></div>
 
+<canvas id="confettiCanvas"></canvas>
+
 <!-- ===================================================
-     MUSIC
+     AUDIO
 =================================================== -->
 
 <audio id="bgMusic"
        loop>
 
     <source src="assets/music/i-lay-my-love-on-you.mp3"
-            type="audio/mp3">
+            type="audio/mpeg">
 
 </audio>
 
 <!-- ===================================================
-     INTRO
+     INTRO SCREEN
 =================================================== -->
 
 <section id="intro"
          class="screen active">
 
-    <div class="intro-overlay"></div>
-
-    <img src="assets/photos/1.jpg"
+    <img src="assets/bg/intro.jpg"
          class="intro-photo"
-         alt="cover">
+         alt="Intro">
+
+    <div class="intro-overlay"></div>
 
     <div class="intro-content">
 
-        <span class="intro-badge">
+        <div class="intro-badge">
 
-            🎮 SPECIAL PROJECT
+            🎮 LOVE QUEST
 
-        </span>
+        </div>
 
         <h3>
 
-            Hello...
+            Happy National Girlfriend Day
 
         </h3>
 
         <h1>
 
-            Sayangg ❤️
+            Deandra ❤️
 
         </h1>
 
         <p>
 
-            Today is not just another day.
+            Hello Sayangg.
 
             <br><br>
 
-            I made something special...
+            This isn't just a website.
 
-            only for you.
+            It's a little adventure I made especially for you.
+
+            Complete every mission,
+
+            unlock every memory,
+
+            and discover what's inside my heart.
 
         </p>
 
         <button id="continueBtn">
 
-            Continue
+            Start Adventure
 
             <i class="fa-solid fa-arrow-right"></i>
 
@@ -161,7 +167,7 @@
 </section>
 
 <!-- ===================================================
-     PRESS START
+     START SCREEN
 =================================================== -->
 
 <section id="startScreen"
@@ -171,33 +177,34 @@
 
         <div class="pixel-icon">
 
-            ❤️
+            🎮
 
         </div>
 
         <h2>
 
-            NATIONAL GIRLFRIEND DAY
+            PLAYER READY
 
         </h2>
 
         <h1>
 
-            UNLOCK MY HEART
+            Welcome,
+            Sayangg ❤️
 
         </h1>
 
         <p>
 
-            Complete every mission.
+            Your mission is simple...
 
-            <br>
+            Catch enough hearts,
 
-            Unlock every memory.
+            avoid the bombs,
 
-            <br>
+            unlock the envelope,
 
-            Reach my heart.
+            then read a special letter made only for you.
 
         </p>
 
@@ -205,7 +212,7 @@
 
             <i class="fa-solid fa-gamepad"></i>
 
-            PRESS START
+            PLAY NOW
 
         </button>
 
@@ -214,7 +221,7 @@
 </section>
 
 <!-- ===================================================
-     GAME HUD
+     GAME SCREEN
 =================================================== -->
 
 <section id="gameSection"
@@ -224,15 +231,11 @@
 
         <div class="hud-card">
 
-            <span>
+            <span>HEART</span>
 
-                ❤️ HEART
+            <h2 id="heartCount">
 
-            </span>
-
-            <h2 id="score">
-
-                0 / 30
+                0 / 15
 
             </h2>
 
@@ -240,31 +243,23 @@
 
         <div class="hud-card">
 
-            <span>
+            <span>SCORE</span>
 
-                ⏰ TIME
+            <h2 id="score">
 
-            </span>
+                0
+
+            </h2>
+
+        </div>
+
+        <div class="hud-card">
+
+            <span>TIME</span>
 
             <h2 id="timer">
 
                 60
-
-            </h2>
-
-        </div>
-
-        <div class="hud-card">
-
-            <span>
-
-                🎮 LEVEL
-
-            </span>
-
-            <h2 id="level">
-
-                1
 
             </h2>
 
@@ -282,22 +277,32 @@
 
     </div>
 
-    <!-- Arena -->
-
     <div id="gameArena">
 
-        <!-- Spawn Object Via JavaScript -->
+        <div id="comboText">
+
+            COMBO x2
+
+        </div>
+
+        <div id="warning">
+
+            ⚠️
+
+        </div>
 
     </div>
 
 </section>
 
-  <!-- ===================================================
+    <!-- ===================================================
      LEVEL COMPLETE
 =================================================== -->
 
 <section id="levelComplete"
          class="screen">
+
+    <div class="reward-glow"></div>
 
     <div class="complete-card">
 
@@ -327,11 +332,15 @@
 
         <p>
 
-            You completed every mission.
+            Amazing, Sayangg!
 
-            <br>
+            <br><br>
 
-            Now it's time to discover
+            You completed every challenge.
+
+            Now there's only one mission left...
+
+            Open the envelope and read
             what's inside my heart.
 
         </p>
@@ -359,7 +368,7 @@
 
         <p class="envelope-title">
 
-            Your Reward
+            YOUR REWARD
 
         </p>
 
@@ -372,7 +381,7 @@
 
                 <span>
 
-                    ❤️
+                    💌
 
                 </span>
 
@@ -386,8 +395,7 @@
 
         <p class="envelope-text">
 
-            Tap the envelope
-            to open it.
+            Tap the envelope to open it ❤️
 
         </p>
 
@@ -408,7 +416,7 @@
 
             <span>
 
-                💌 PRIVATE LETTER
+                PRIVATE LETTER
 
             </span>
 
@@ -418,14 +426,11 @@
 
             <h2>
 
-                Happy National
-                Girlfriend Day ❤️
+                Happy National Girlfriend Day ❤️
 
             </h2>
 
             <div id="typingText">
-
-                <!-- Typewriter -->
 
             </div>
 
@@ -436,7 +441,7 @@
     <button id="nextGallery"
             class="next-button">
 
-        Continue
+        Unlock Memories
 
         <i class="fa-solid fa-arrow-right"></i>
 
@@ -459,7 +464,7 @@
 </div>
 
 <!-- ===================================================
-     TRANSITION
+     TRANSITION LAYER
 =================================================== -->
 
 <div id="transitionLayer">
@@ -472,8 +477,50 @@
 
 </div>
 
-  <!-- ===================================================
-     SCRAPBOOK GALLERY
+<!-- ===================================================
+     SECRET POPUP
+=================================================== -->
+
+<div id="secretPopup"
+     class="secret-popup">
+
+    <div class="secret-card">
+
+        <h2>
+
+            ❤️ Secret Message ❤️
+
+        </h2>
+
+        <p>
+
+            Thank you for always being
+            the best part of my days.
+
+            <br><br>
+
+            No matter how difficult life becomes,
+            I hope we can continue writing
+            beautiful memories together.
+
+            <br><br>
+
+            I love you more than words can explain.
+
+        </p>
+
+        <button id="closeSecret">
+
+            Close
+
+        </button>
+
+    </div>
+
+</div>
+
+    <!-- ===================================================
+     MEMORY GALLERY
 =================================================== -->
 
 <section id="gallerySection"
@@ -481,12 +528,16 @@
 
     <div class="section-heading">
 
-        <span>📸 OUR MEMORIES</span>
+        <span>
+
+            📸 UNLOCKED MEMORIES
+
+        </span>
 
         <h2>
 
-            Every Photo
-            Has A Story
+            Every Memory
+            Deserves To Be Remembered
 
         </h2>
 
@@ -494,21 +545,21 @@
 
     <div class="scrapbook">
 
-        <div class="photo polaroid"><img src="assets/photos/1.jpg" alt=""></div>
-        <div class="photo polaroid"><img src="assets/photos/2.jpg" alt=""></div>
-        <div class="photo polaroid"><img src="assets/photos/3.jpg" alt=""></div>
-        <div class="photo polaroid"><img src="assets/photos/4.jpg" alt=""></div>
-        <div class="photo polaroid"><img src="assets/photos/5.jpg" alt=""></div>
-        <div class="photo polaroid"><img src="assets/photos/6.jpg" alt=""></div>
-        <div class="photo polaroid"><img src="assets/photos/7.jpg" alt=""></div>
-        <div class="photo polaroid"><img src="assets/photos/8.jpg" alt=""></div>
-        <div class="photo polaroid"><img src="assets/photos/9.jpg" alt=""></div>
-        <div class="photo polaroid"><img src="assets/photos/10.jpg" alt=""></div>
-        <div class="photo polaroid"><img src="assets/photos/11.jpg" alt=""></div>
-        <div class="photo polaroid"><img src="assets/photos/12.jpg" alt=""></div>
-        <div class="photo polaroid"><img src="assets/photos/13.jpg" alt=""></div>
-        <div class="photo polaroid"><img src="assets/photos/14.jpg" alt=""></div>
-        <div class="photo polaroid"><img src="assets/photos/15.jpg" alt=""></div>
+        <div class="photo fade-up"><img src="assets/photos/1.jpg" alt="Memory 1"></div>
+        <div class="photo fade-up"><img src="assets/photos/2.jpg" alt="Memory 2"></div>
+        <div class="photo fade-up"><img src="assets/photos/3.jpg" alt="Memory 3"></div>
+        <div class="photo fade-up"><img src="assets/photos/4.jpg" alt="Memory 4"></div>
+        <div class="photo fade-up"><img src="assets/photos/5.jpg" alt="Memory 5"></div>
+        <div class="photo fade-up"><img src="assets/photos/6.jpg" alt="Memory 6"></div>
+        <div class="photo fade-up"><img src="assets/photos/7.jpg" alt="Memory 7"></div>
+        <div class="photo fade-up"><img src="assets/photos/8.jpg" alt="Memory 8"></div>
+        <div class="photo fade-up"><img src="assets/photos/9.jpg" alt="Memory 9"></div>
+        <div class="photo fade-up"><img src="assets/photos/10.jpg" alt="Memory 10"></div>
+        <div class="photo fade-up"><img src="assets/photos/11.jpg" alt="Memory 11"></div>
+        <div class="photo fade-up"><img src="assets/photos/12.jpg" alt="Memory 12"></div>
+        <div class="photo fade-up"><img src="assets/photos/13.jpg" alt="Memory 13"></div>
+        <div class="photo fade-up"><img src="assets/photos/14.jpg" alt="Memory 14"></div>
+        <div class="photo fade-up"><img src="assets/photos/15.jpg" alt="Memory 15"></div>
 
     </div>
 
@@ -523,12 +574,16 @@
 
     <div class="section-heading">
 
-        <span>🕰 OUR JOURNEY</span>
+        <span>
+
+            🕰 OUR STORY
+
+        </span>
 
         <h2>
 
-            From The First Hello
-            Until Today
+            Every Chapter
+            Matters
 
         </h2>
 
@@ -536,43 +591,67 @@
 
     <div class="timeline">
 
-        <div class="timeline-card">
+        <div class="timeline-card fade-up">
 
-            <span>03 March 2026</span>
+            <span>
 
-            <h3>We Met</h3>
+                03 March 2026
 
-        </div>
+            </span>
 
-        <div class="timeline-card">
+            <h3>
 
-            <span>After That</span>
+                The first time we met.
 
-            <h3>Started Talking Every Day</h3>
-
-        </div>
-
-        <div class="timeline-card">
-
-            <span>Little By Little</span>
-
-            <h3>Fell In Love</h3>
+            </h3>
 
         </div>
 
-        <div class="timeline-card">
+        <div class="timeline-card fade-up">
 
-            <span>Our Journey</span>
+            <span>
 
-            <h3>Creating Beautiful Memories</h3>
+                After That
+
+            </span>
+
+            <h3>
+
+                We started talking every day.
+
+            </h3>
 
         </div>
 
-        <div class="timeline-card">
+        <div class="timeline-card fade-up">
 
-            <span>01 August 2026</span>
+            <span>
 
-            <h3>Happy National Girlfriend Day ❤️</h3>
+                Little By Little
+
+            </span>
+
+            <h3>
+
+                You became my favorite person.
+
+            </h3>
+
+        </div>
+
+        <div class="timeline-card fade-up">
+
+            <span>
+
+                Today
+
+            </span>
+
+            <h3>
+
+                Happy National Girlfriend Day ❤️
+
+            </h3>
 
         </div>
 
@@ -589,7 +668,11 @@
 
     <div class="section-heading">
 
-        <span>❤️ REASONS</span>
+        <span>
+
+            ❤️ REASONS
+
+        </span>
 
         <h2>
 
@@ -601,21 +684,21 @@
 
     <div class="reason-grid">
 
-        <div class="reason-card">❤️ Your Beautiful Smile</div>
+        <div class="reason-card">❤️ Your smile always makes my day.</div>
 
-        <div class="reason-card">❤️ Your Cute Laugh</div>
+        <div class="reason-card">🌸 You're beautiful inside and out.</div>
 
-        <div class="reason-card">❤️ You Always Support Me</div>
+        <div class="reason-card">🤍 You always understand me.</div>
 
-        <div class="reason-card">❤️ You're My Safe Place</div>
+        <div class="reason-card">✨ You make ordinary days special.</div>
 
-        <div class="reason-card">❤️ You Understand Me</div>
+        <div class="reason-card">🥹 I feel safe when I'm with you.</div>
 
-        <div class="reason-card">❤️ Every Day Feels Better With You</div>
+        <div class="reason-card">🎮 You're my favorite teammate.</div>
 
-        <div class="reason-card">❤️ Your Kind Heart</div>
+        <div class="reason-card">🌙 You're always in my prayers.</div>
 
-        <div class="reason-card">❤️ Everything About You</div>
+        <div class="reason-card">💖 Because you're simply you.</div>
 
     </div>
 
@@ -630,11 +713,15 @@
 
     <div class="section-heading">
 
-        <span>🏆 ACHIEVEMENTS</span>
+        <span>
+
+            🏆 ACHIEVEMENTS
+
+        </span>
 
         <h2>
 
-            Unlocked Today
+            Today's Unlocks
 
         </h2>
 
@@ -642,35 +729,51 @@
 
     <div class="achievement-grid">
 
-        <div class="achievement-item">
+        <div class="achievement-item glow">
 
             🏆
 
-            <h3>Heart Hunter</h3>
+            <h3>
+
+                Heart Hunter
+
+            </h3>
 
         </div>
 
-        <div class="achievement-item">
+        <div class="achievement-item glow">
 
-            💖
+            💌
 
-            <h3>Love Explorer</h3>
+            <h3>
+
+                Love Messenger
+
+            </h3>
 
         </div>
 
-        <div class="achievement-item">
+        <div class="achievement-item glow">
 
             ⭐
 
-            <h3>Perfect Catch</h3>
+            <h3>
+
+                Perfect Player
+
+            </h3>
 
         </div>
 
-        <div class="achievement-item">
+        <div class="achievement-item glow">
 
             👑
 
-            <h3>Best Girlfriend Ever</h3>
+            <h3>
+
+                Best Girlfriend Ever
+
+            </h3>
 
         </div>
 
@@ -679,7 +782,7 @@
 </section>
 
 <!-- ===================================================
-     SECRET
+     SECRET BUTTON
 =================================================== -->
 
 <section id="secretSection"
@@ -687,7 +790,7 @@
 
     <button id="secretButton">
 
-        Don't Click Me...
+        🎁 Secret Ending
 
     </button>
 
@@ -704,24 +807,24 @@
 
         <h1>
 
-            Mission Complete ❤️
+            Thank You ❤️
 
         </h1>
 
         <p>
 
-            Thank you for playing
-            this little game.
+            Thank you for finishing every mission.
 
             <br><br>
 
-            I hope every moment
-            made you smile.
+            I hope this little game
+            can always remind you
+            how precious you are to me.
 
             <br><br>
 
-            Happy National
-            Girlfriend Day.
+            Happy National Girlfriend Day,
+            Sayangg.
 
         </p>
 
@@ -733,7 +836,7 @@
 
         <h3>
 
-            — Akbar ❤️
+            — With Love, Akbar ❤️
 
         </h3>
 
@@ -761,7 +864,7 @@
 
     <img id="modalImage"
          src=""
-         alt="">
+         alt="Preview">
 
 </div>
 
@@ -771,20 +874,24 @@
 
 <footer>
 
-    Made With ❤️ By Akbar
+    Made with ❤️ by Akbar • National Girlfriend Day 2026
 
 </footer>
 
 <!-- ===================================================
-     JAVASCRIPT
+     LIBRARIES
 =================================================== -->
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
+<!-- ===================================================
+     MAIN SCRIPT
+=================================================== -->
+
 <script src="script.js"></script>
 
 </body>
 
-</html>
+    </html>
