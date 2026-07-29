@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Unlock My Heart ❤️ | Akbar & Deandra
+    </title>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Press+Start+2P&display=swap"
+          rel="stylesheet">
+
+    <!-- Icons -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ===================================================
+     PRELOADER
+=================================================== -->
+
+<div id="preloader">
+
+    <div class="boot-container">
+
+        <div class="boot-logo">
+
+            ❤️
+
+        </div>
+
+        <h1>
+
+            SYSTEM BOOTING
+
+        </h1>
+
+        <p id="bootText">
+
+            Initializing...
+
+        </p>
+
+        <div class="boot-progress">
+
+            <div id="bootFill"></div>
+
+        </div>
+
+        <span id="bootPercent">
+
+            0%
+
+        </span>
+
+    </div>
+
+</div>
+
+<!-- ===================================================
+     PARTICLES
+=================================================== -->
+
+<div id="particles"></div>
+
+<div id="floatingHearts"></div>
+
+<div id="sparkles"></div>
+
+<div id="cursorGlow"></div>
+
+<!-- ===================================================
+     MUSIC
+=================================================== -->
+
+<audio id="bgMusic"
+       loop>
+
+    <source src="assets/music/i-lay-my-love-on-you.mp3"
+            type="audio/mp3">
+
+</audio>
+
+<!-- ===================================================
+     INTRO
+=================================================== -->
+
+<section id="intro"
+         class="screen active">
+
+    <div class="intro-overlay"></div>
+
+    <img src="assets/photos/1.jpg"
+         class="intro-photo"
+         alt="cover">
+
+    <div class="intro-content">
+
+        <span class="intro-badge">
+
+            🎮 SPECIAL PROJECT
+
+        </span>
+
+        <h3>
+
+            Hello...
+
+        </h3>
+
+        <h1>
+
+            Sayangg ❤️
+
+        </h1>
+
+        <p>
+
+            Today is not just another day.
+
+            <br><br>
+
+            I made something special...
+
+            only for you.
+
+        </p>
+
+        <button id="continueBtn">
+
+            Continue
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ===================================================
+     PRESS START
+=================================================== -->
+
+<section id="startScreen"
+         class="screen">
+
+    <div class="glass-panel">
+
+        <div class="pixel-icon">
+
+            ❤️
+
+        </div>
+
+        <h2>
+
+            NATIONAL GIRLFRIEND DAY
+
+        </h2>
+
+        <h1>
+
+            UNLOCK MY HEART
+
+        </h1>
+
+        <p>
+
+            Complete every mission.
+
+            <br>
+
+            Unlock every memory.
+
+            <br>
+
+            Reach my heart.
+
+        </p>
+
+        <button id="startGame">
+
+            <i class="fa-solid fa-gamepad"></i>
+
+            PRESS START
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ===================================================
+     GAME HUD
+=================================================== -->
+
+<section id="gameSection"
+         class="screen">
+
+    <div class="hud">
+
+        <div class="hud-card">
+
+            <span>
+
+                ❤️ HEART
+
+            </span>
+
+            <h2 id="score">
+
+                0 / 30
+
+            </h2>
+
+        </div>
+
+        <div class="hud-card">
+
+            <span>
+
+                ⏰ TIME
+
+            </span>
+
+            <h2 id="timer">
+
+                60
+
+            </h2>
+
+        </div>
+
+        <div class="hud-card">
+
+            <span>
+
+                🎮 LEVEL
+
+            </span>
+
+            <h2 id="level">
+
+                1
+
+            </h2>
+
+        </div>
+
+    </div>
+
+    <div class="progress-wrapper">
+
+        <div class="progress-bar">
+
+            <div id="progressFill"></div>
+
+        </div>
+
+    </div>
+
+    <!-- Arena -->
+
+    <div id="gameArena">
+
+        <!-- Spawn Object Via JavaScript -->
+
+    </div>
+
+</section>
+
+  <!-- ===================================================
+     LEVEL COMPLETE
+=================================================== -->
+
+<section id="levelComplete"
+         class="screen">
+
+    <div class="complete-card">
+
+        <div class="complete-icon">
+
+            🏆
+
+        </div>
+
+        <span class="complete-badge">
+
+            MISSION COMPLETE
+
+        </span>
+
+        <h1>
+
+            Congratulations ❤️
+
+        </h1>
+
+        <h2>
+
+            You Unlocked My Heart
+
+        </h2>
+
+        <p>
+
+            You completed every mission.
+
+            <br>
+
+            Now it's time to discover
+            what's inside my heart.
+
+        </p>
+
+        <button id="claimReward">
+
+            Claim Reward
+
+            <i class="fa-solid fa-gift"></i>
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ===================================================
+     ENVELOPE
+=================================================== -->
+
+<section id="envelopeSection"
+         class="screen">
+
+    <div class="envelope-wrapper">
+
+        <p class="envelope-title">
+
+            Your Reward
+
+        </p>
+
+        <div id="envelope"
+             class="envelope">
+
+            <div class="envelope-back"></div>
+
+            <div class="envelope-paper">
+
+                <span>
+
+                    ❤️
+
+                </span>
+
+            </div>
+
+            <div class="envelope-front"></div>
+
+            <div class="envelope-cover"></div>
+
+        </div>
+
+        <p class="envelope-text">
+
+            Tap the envelope
+            to open it.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ===================================================
+     LOVE LETTER
+=================================================== -->
+
+<section id="letterSection"
+         class="screen">
+
+    <div class="letter-container">
+
+        <div class="paper-header">
+
+            <span>
+
+                💌 PRIVATE LETTER
+
+            </span>
+
+        </div>
+
+        <div class="paper-body">
+
+            <h2>
+
+                Happy National
+                Girlfriend Day ❤️
+
+            </h2>
+
+            <div id="typingText">
+
+                <!-- Typewriter -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <button id="nextGallery"
+            class="next-button">
+
+        Continue
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+    </button>
+
+</section>
+
+<!-- ===================================================
+     MUSIC CONTROL
+=================================================== -->
+
+<div id="musicControl">
+
+    <button id="musicBtn">
+
+        <i class="fa-solid fa-volume-high"></i>
+
+    </button>
+
+</div>
+
+<!-- ===================================================
+     TRANSITION
+=================================================== -->
+
+<div id="transitionLayer">
+
+    <div class="transition-logo">
+
+        ❤️
+
+    </div>
+
+</div>
+
+  <!-- ===================================================
+     SCRAPBOOK GALLERY
+=================================================== -->
+
+<section id="gallerySection"
+         class="screen">
+
+    <div class="section-heading">
+
+        <span>📸 OUR MEMORIES</span>
+
+        <h2>
+
+            Every Photo
+            Has A Story
+
+        </h2>
+
+    </div>
+
+    <div class="scrapbook">
+
+        <div class="photo polaroid"><img src="assets/photos/1.jpg" alt=""></div>
+        <div class="photo polaroid"><img src="assets/photos/2.jpg" alt=""></div>
+        <div class="photo polaroid"><img src="assets/photos/3.jpg" alt=""></div>
+        <div class="photo polaroid"><img src="assets/photos/4.jpg" alt=""></div>
+        <div class="photo polaroid"><img src="assets/photos/5.jpg" alt=""></div>
+        <div class="photo polaroid"><img src="assets/photos/6.jpg" alt=""></div>
+        <div class="photo polaroid"><img src="assets/photos/7.jpg" alt=""></div>
+        <div class="photo polaroid"><img src="assets/photos/8.jpg" alt=""></div>
+        <div class="photo polaroid"><img src="assets/photos/9.jpg" alt=""></div>
+        <div class="photo polaroid"><img src="assets/photos/10.jpg" alt=""></div>
+        <div class="photo polaroid"><img src="assets/photos/11.jpg" alt=""></div>
+        <div class="photo polaroid"><img src="assets/photos/12.jpg" alt=""></div>
+        <div class="photo polaroid"><img src="assets/photos/13.jpg" alt=""></div>
+        <div class="photo polaroid"><img src="assets/photos/14.jpg" alt=""></div>
+        <div class="photo polaroid"><img src="assets/photos/15.jpg" alt=""></div>
+
+    </div>
+
+</section>
+
+<!-- ===================================================
+     TIMELINE
+=================================================== -->
+
+<section id="timelineSection"
+         class="screen">
+
+    <div class="section-heading">
+
+        <span>🕰 OUR JOURNEY</span>
+
+        <h2>
+
+            From The First Hello
+            Until Today
+
+        </h2>
+
+    </div>
+
+    <div class="timeline">
+
+        <div class="timeline-card">
+
+            <span>03 March 2026</span>
+
+            <h3>We Met</h3>
+
+        </div>
+
+        <div class="timeline-card">
+
+            <span>After That</span>
+
+            <h3>Started Talking Every Day</h3>
+
+        </div>
+
+        <div class="timeline-card">
+
+            <span>Little By Little</span>
+
+            <h3>Fell In Love</h3>
+
+        </div>
+
+        <div class="timeline-card">
+
+            <span>Our Journey</span>
+
+            <h3>Creating Beautiful Memories</h3>
+
+        </div>
+
+        <div class="timeline-card">
+
+            <span>01 August 2026</span>
+
+            <h3>Happy National Girlfriend Day ❤️</h3>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================================================
+     REASONS
+=================================================== -->
+
+<section id="reasonSection"
+         class="screen">
+
+    <div class="section-heading">
+
+        <span>❤️ REASONS</span>
+
+        <h2>
+
+            Why I Love You
+
+        </h2>
+
+    </div>
+
+    <div class="reason-grid">
+
+        <div class="reason-card">❤️ Your Beautiful Smile</div>
+
+        <div class="reason-card">❤️ Your Cute Laugh</div>
+
+        <div class="reason-card">❤️ You Always Support Me</div>
+
+        <div class="reason-card">❤️ You're My Safe Place</div>
+
+        <div class="reason-card">❤️ You Understand Me</div>
+
+        <div class="reason-card">❤️ Every Day Feels Better With You</div>
+
+        <div class="reason-card">❤️ Your Kind Heart</div>
+
+        <div class="reason-card">❤️ Everything About You</div>
+
+    </div>
+
+</section>
+
+<!-- ===================================================
+     ACHIEVEMENT
+=================================================== -->
+
+<section id="achievementSection"
+         class="screen">
+
+    <div class="section-heading">
+
+        <span>🏆 ACHIEVEMENTS</span>
+
+        <h2>
+
+            Unlocked Today
+
+        </h2>
+
+    </div>
+
+    <div class="achievement-grid">
+
+        <div class="achievement-item">
+
+            🏆
+
+            <h3>Heart Hunter</h3>
+
+        </div>
+
+        <div class="achievement-item">
+
+            💖
+
+            <h3>Love Explorer</h3>
+
+        </div>
+
+        <div class="achievement-item">
+
+            ⭐
+
+            <h3>Perfect Catch</h3>
+
+        </div>
+
+        <div class="achievement-item">
+
+            👑
+
+            <h3>Best Girlfriend Ever</h3>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================================================
+     SECRET
+=================================================== -->
+
+<section id="secretSection"
+         class="screen">
+
+    <button id="secretButton">
+
+        Don't Click Me...
+
+    </button>
+
+</section>
+
+<!-- ===================================================
+     ENDING
+=================================================== -->
+
+<section id="endingSection"
+         class="screen">
+
+    <div class="ending-content">
+
+        <h1>
+
+            Mission Complete ❤️
+
+        </h1>
+
+        <p>
+
+            Thank you for playing
+            this little game.
+
+            <br><br>
+
+            I hope every moment
+            made you smile.
+
+            <br><br>
+
+            Happy National
+            Girlfriend Day.
+
+        </p>
+
+        <h2>
+
+            I Lay My Love On You.
+
+        </h2>
+
+        <h3>
+
+            — Akbar ❤️
+
+        </h3>
+
+        <button id="replayGame">
+
+            Play Again
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ===================================================
+     IMAGE MODAL
+=================================================== -->
+
+<div id="imageModal">
+
+    <span id="closeModal">
+
+        &times;
+
+    </span>
+
+    <img id="modalImage"
+         src=""
+         alt="">
+
+</div>
+
+<!-- ===================================================
+     FOOTER
+=================================================== -->
+
+<footer>
+
+    Made With ❤️ By Akbar
+
+</footer>
+
+<!-- ===================================================
+     JAVASCRIPT
+=================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
